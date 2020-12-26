@@ -1,9 +1,9 @@
 # coding:utf-8
 import os.path
 def get_gc_result():
-    gc = 4161  # GCÊ±³¤
+    gc = 4161  # GCæ—¶é•¿
     gc_time = int(gc)
-    path = input("ÊäÈë²Ù×÷Â·¾¶£º\n")
+    path = input("è¾“å…¥æ“ä½œè·¯å¾„ï¼š\n")
     os.chdir(path)
     files = os.listdir('.')
     for file in files:
@@ -11,7 +11,7 @@ def get_gc_result():
             with open(file, 'r',encoding='UTF-8') as fp:
                 lines = fp.readlines()
                 if 'not found' in lines[0]:
-                    print("ÎÄ¼şÃû£º" + file + "\nGCÊ§°Ü")
+                    print("æ–‡ä»¶åï¼š" + file + "\nGCå¤±è´¥")
                     continue
                 first = lines[1]
                 first_no = first[-9:-1]
@@ -21,8 +21,8 @@ def get_gc_result():
                 last_no = float(last_no)
                 g = float((gc_time - last_no + first_no) / gc_time)
 
-                print("ÎÄ¼şÃû£º" + file)
-                # print("GCÖµÎª£º%.2f%%" % (g * 100))
+                print("æ–‡ä»¶åï¼š" + file)
+                # print("GCå€¼ä¸ºï¼š%.2f%%" % (g * 100))
                 print("%.2f%%" % (g * 100))
 
 if __name__ == '__main__':
